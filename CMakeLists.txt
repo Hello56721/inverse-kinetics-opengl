@@ -10,7 +10,13 @@ find_package(GLFW)
 add_library(glad STATIC deps/glad/src/glad.c)
 target_include_directories(glad PRIVATE deps/glad/include)
 
-add_executable(inverse-kinetics-opengl main.cpp)
+add_executable(
+	inverse-kinetics-opengl
+	
+	main.cpp 
+	window.cpp
+	window.hpp
+)
 
 target_include_directories(inverse-kinetics-opengl PRIVATE ${GLFW_INCLUDE_DIR} deps/glad/include)
 
